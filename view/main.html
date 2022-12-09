@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="main.css" rel="stylesheet">
+    <link href="aos.css" rel="stylesheet">
+
+    <title>Obdam Mental Care Hospital Website</title>
+</head>
+<body>
+    <div class="bag"></div>
+    <div class="drop"></div>
+    <nav class="navigasi">
+        <div class="logo"></div>
+        <h3>Hospital <br> Obdam Mental Care</h3>
+        <div class="navigasi-item">
+            <a href="main.html" target="top">Beranda</a>
+            <a href="doctor.html" target="_blank">Doctor</a>
+            <a href="pasien.html" target="_blank">Pasien</a>
+        </div>
+    </nav>
+
+    <div class="center">
+        <h1 data-aos="zoom-in" data-aos-duration=1000>Welcome <br> To Our Website <br> </h1>
+        <h1 data-aos="fade-down" data-aos-duration=1000  class="name">Obdam Mental Care Hospital</h1>
+    </div>
+
+    <div class="shape">
+        <div class="shape-1">
+            <div data-aos="fade-left" data-aos-duration=1000   class="shape-2">
+                <ion-icon name="people-sharp" class="icon"></ion-icon>
+                <a href="#about-doctor" class="title">About Doctor</a>
+            </div>
+            <div data-aos="fade-right" data-aos-duration=1000  class="shape-2">
+                <ion-icon name="home-sharp" class="icon"></ion-icon>
+                <a href="#about-hospital" class="title">About Hospital</a>
+            </div>
+        </div>
+        <div class="shap">
+            <div data-aos="fade-left" data-aos-duration=1000  class="shape-2-2">
+                <ion-icon name="body-sharp" class="icon"></ion-icon>
+                <a href="#about-pasien" class="title">About Our Pasien</a>
+            </div>
+            <div data-aos="fade-right" data-aos-duration=1000   class="shape-2-1">
+                <ion-icon name="fitness-sharp" class="icon"></ion-icon>
+                <a href="#about-mental" class="title">About Mental Care</a>
+        </div>
+        </div>
+    </div>
+
+    <div id="about-hospital">
+        <img src="../docpict/obdam.jfif">
+        <div data-aos="fade-up" data-aos-duration="1000"class="detail">
+            <h1>Amanda Chalista Obdam</h1>
+            <h3>29 Tahun</h3>
+            <br><br>
+            <h3>Tempat, Tanggal Lahir</h3>
+            <h1>Canada, 17 Juni 1993</h1>
+            <br><br>
+            <p>Amanda Chalista Obdam atau yang biasa disebut Amanda Obdam merupakan Pemilik 
+                daripada Obdam Mental Care Hospital, wanita kelahiran 1993 ini merupakan 
+            mahasiswi daripada lulusan University of Toronto Mississauga. Amanda Obdam mulai merintis rumah
+        sakit ini pada tahun 2010 dikarenakan rasa empati yang tinggi terhadap banyaknya pasien yang memiliki
+    keterbatasan biaya untuk mendapat fasilitas serta obat-obatan. <br>
+    Rumah sakit ini berada di Jl. Thanasit 5A, Center Bangkok Thailand. <br>
+    Call Center : 021-9876-6543</p>
+        </div>
+    </div>
+   
+
+    <div id="about-doctor">
+        <div class="detail">
+            <h1 id="banyak"> Spesialis Doctor</h1>
+            <p id="spes"></p>
+        </div>
+        <img data-aos="fade-left" data-aos-duration="7000" src="../docpict/Off.jfif">
+
+    </div>
+   
+    <div id="about-pasien">
+        <img data-aos="fade-up" data-aos-duration="1000" src="../docpict/pasien.jfif">
+        <div  data-aos="fade-up" data-aos-duration="1000" class="detail">
+            <p>Banyaknya pasien yang berada di rumah sakit ini berkisar pada umur 30 keatas. 
+                banyak pasien yang perlu dibantu dan disayangi karna banyaknya dari mereka 
+                yang mengalami trauma yang berlebih, stress yang berkepanjangan dan kurangnya 
+                perhatian dari publik melainkan rasa terkucil oleh dunia.
+            </p>
+        </div>
+    </div>
+
+    <div id="about-mental">
+        <img data-aos="fade-down" data-aos-duration="1000" src="../docpict/mental.jfif">
+        <div data-aos="fade-down" data-aos-duration="1000" class="detail">
+            <p>Kesehatan mental sama pentingnya dengan kesehatan fisik. Mental yang sehat akan membuat pikiran menjadi positif sehingga tubuh akan berfungsi dengan baik secara emosional, psikologis, sosial dan akan mempengaruhi cara berfikir, merasakan, dan berperilaku. Ada beberapa cara menjaga kesehatan mental antara lain:
+                <br><br>1. Istirahat yang cukup
+                <br>2. Olahraga Secara Rutin
+                <br>3. Lakukan hal positif
+                <br>4. Kurangi stress
+                <br>5. Menjaga Konsentrasi
+                <br><br>Penting untuk diingat bahwa kesehatan mental merupakan hal yang tidak boleh diabaikan dan harus dipelihara sebaik mungkin. Lakukan cara menjaga kesehatan mental yang telah dipaparkan di atas agar fisik, psikis, emosi, dan kehidupan sosialmu selalu dalam kondisi yang baik.
+            </p>
+        </div>
+    </div>
+   
+    
+</body>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="aos.js"></script>
+<script>
+    AOS.init();
+    function view(){
+            let pasien = ' '
+        
+        fetch("http://localhost:5000/getjob")
+        .then((response)=>response.json())
+        .then((data)=> {
+            console.log(data)
+            data.forEach((pas) => {
+                pasien+=         
+              `
+                    <li>${pas.Job_Name}</li>
+                
+                `;
+            })
+            const pasiens = document.getElementById("spes").innerHTML=pasien;
+        })
+     }
+     view()
+</script>
+</html>

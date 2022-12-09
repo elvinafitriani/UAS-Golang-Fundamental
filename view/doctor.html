@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="doctor.css">
+    <title>Doctor</title>
+</head>
+<body>
+
+<div class="animation">
+    <ul class="box-area">
+        <li><ion-icon name="planet-sharp"></ion-icon></li>
+        <li><ion-icon name="planet-sharp"></ion-icon></li>
+        <li><ion-icon name="planet-sharp"></ion-icon></li>
+        <li><ion-icon name="planet-sharp"></ion-icon></li>
+        <li><ion-icon name="planet-sharp"></ion-icon></li>
+        <li><ion-icon name="planet-sharp"></ion-icon></li>
+        <li><ion-icon name="planet-sharp"></ion-icon></li>
+        <li><ion-icon name="planet-sharp"></ion-icon></li>
+        <li><ion-icon name="planet-sharp"></ion-icon></li>
+        <li><ion-icon name="planet-sharp"></ion-icon></li>
+    </ul>
+    </div>
+
+    <div class="logo"></div>
+    <br>
+    <h1 class="center">Data Doctor <br> Obdam Mental Care Hospital</h1>
+    <form id="input">
+        <input id="inputid" type="text" placeholder="id doctor...."/>
+        <button id="submit" type="submit"><ion-icon name="search-outline"></ion-icon></button>
+
+    </form> 
+   
+    
+    <p id="doctor"></p>
+   
+ 
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        var data,nomor=0;
+        
+        view()
+
+        var form = document.getElementById('input')
+        form.addEventListener('submit',function(event){
+        event.preventDefault()
+
+        var id = document.getElementById('inputid').value
+        console.log(id)
+        viewrequest(id)
+        })
+
+        function viewrequest(id){
+            let doctor = ' '
+          
+        
+        fetch("http://localhost:5000/getdoc/" + id)
+        .then((response)=>response.json())
+        .then((data)=> {
+            console.log(data)
+
+            if (data==undefined){
+               alert("No ID Match");
+            }
+            doctor+=
+            `
+            <div class="head">
+                    <img class="docpict" src="${data[0].doc_pict}">
+                    <h1 class="doc-name">${data[0].Doctor_name}</h1>
+                </div>
+                
+                <div class="doc-id">
+                    <h3 >${data[0].doctor_id}<br>${data[0].doc_age}<br>${data[0].detail_sex}<br>${data[0].Job_Name}</h3>
+                    <div class="line"></div>
+                    <h3>Tempat, Tanggal Lahir</h3>
+                    <h1 class="doc-ttl">${data[0].detail_ttl}</h1>
+                    <h3>Background Of Education</h3>
+                    <h1 class="doc-ttl">${data[0].detail_edu}</h1>
+                </div>
+                <h3 text-align="center"> Pasien Yang Ditangani </h3>
+                <table>
+                    <tr>
+                        <th>Id Pasien</th>
+                        <th>Nama Pasien</th>
+                        <th>Umur Pasien</th>
+
+                    </tr>    
+                </table>
+            `;
+            data.forEach((pas) => {
+                doctor+=
+               `
+                <table>
+                    <tr>
+                        <td>${pas.pasien_id}</td>
+                        <td>${pas.nama}</td>
+                        <td>${pas.detail_age}</td>
+
+                    </tr>
+                </table>
+                
+                `;
+            })
+            const pasiens = document.getElementById("doctor").innerHTML=doctor;
+        })
+     }
+    
+     function view(){
+            
+        let doctor = ' '
+        
+        fetch("http://localhost:5000/getdoc")
+        .then((response)=>response.json())
+        .then((data)=> {
+            doctor+=
+            `<table>
+             <tr>
+                <th style="padding:10px">Doctor Id</th>
+                <th style="padding:10px">Doctor Name</th>
+                <th style="padding:10px">Spesialis</th>
+                <th style="padding:10px">Jadwal</th>
+            </tr>
+            </table>`;
+            console.log(data)
+
+            if (data==null){
+               alert("No ID Match");
+            }
+
+            data.forEach((doc) => {
+                doctor+=
+               `<table>
+                <tr> 
+                            <td style="padding:10px">${doc.doctor_id}</td>
+							<td style="padding:10px">${doc.Doctor_name}</td>
+                            <td style="padding:10px">${doc.Job_Name}</td>
+                            <td style="padding:10px">${doc.jadwal}</td>
+                </tr>
+                `;
+            })
+            const pasiens = document.getElementById("doctor").innerHTML=doctor;
+        })
+     }
+     
+    </script>
+</body>
+</html>

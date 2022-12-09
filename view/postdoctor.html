@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasien</title>
+</head>
+<body>
+    <h1>Data Pasien</h1>
+   
+    <form class="form">
+        <input id="inputid" type="text" placeholder="doctor id"/>
+        <input id="inputnama" type="text" placeholder="doctor nama"/>
+        <input id="inputjob" type="text" placeholder="doctor job"/>
+        <input id="inputjadwal" type="text" placeholder="doctor jadwal"/>
+       <button type="subbmit">submit</button>
+    </form>
+
+    
+    <p id="doctor"></p>
+   
+   <script>
+   const formEl = document.querySelector('.form');
+   formEl.addEventListener('submit',event => {
+   event.preventDefault();
+
+   const formData = new FormData(formEl);
+   const data = Object.fromEntries(formData);
+
+   fetch("http://localhost:5000/post", {
+    method: 'POST',
+    headers:{
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+   }).then(res=> res.json())
+    .then(data => console.log(data))
+    .catch(error => console.log(error));
+   });
+    </script>
+</body>
+</html>

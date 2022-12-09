@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500&family=Quicksand:wght@600&display=swap');
+
+*{
+    padding: 0px;
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-size: cover;
+  
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.logo{
+    width: 100px;
+    height: 100px;
+    margin-top: -430px;
+    margin-left: -90px;
+    background-image: url("logo.png");
+    position: absolute;
+    z-index: 0;
+}
+
+.bag{
+    padding: 0;
+    margin: 0;
+    background-image: url("hospitalhallway3.jpg");
+    background-blend-mode: darken;
+    height: 500px;
+    
+}
+.drop{
+  
+        padding: 0;
+        margin: 0;
+        background-color: black;
+        opacity: 1;
+        height: 500px;
+        margin-top: -500px;
+        opacity: 0.7;
+    
+}
+.navigasi{
+    display: flex;
+    margin-left: 300px;
+    color: aliceblue;
+    position: absolute;
+    
+}
+.navigasi h3{
+    margin-top: -400px;
+}
+
+.navigasi-item{
+    margin-left: 400px;
+    color: aliceblue;
+    margin-top: -400px;
+}
+.navigasi-item a{
+    margin: 10px;
+    color: aliceblue;
+    text-decoration: none;
+    transition: 0.5s ease-in-out;
+}
+ .navigasi-item a:hover{
+    color: rgb(214, 122, 122);
+}
+.center{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: -250px;
+    color: aliceblue;
+    position: absolute;
+    margin-left: 450px;
+   
+}
+
+.center h1{
+    text-align: center;
+}
+
+.center .name{
+    margin-top: 20px;
+    color: rgb(214, 122, 122);
+}
+
+.shape{
+    padding: 0px;
+    margin-top: -50px;
+    margin-left: -27px;
+    background-color: #497174;
+    width:104%;
+    height: 700px;
+    border-radius: 70px 70px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+  
+}
+
+.shape-1{
+    background-color: #D6E4E5;
+    width: 70%;
+    height: 500px;
+    margin-left: 200px;
+    margin-top: -350px;
+    border-radius: 70px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    box-shadow: 5px 10px 25px 25px rgb(18, 18, 18);
+   
+}
+
+.shape-2{
+    background-image:radial-gradient(#749F82, #CFFF8D);
+    width: 300px;
+    height: 100px;
+    margin: 50px;
+    border-radius: 15px;
+    display: flex;
+    box-shadow: 5px 10px 15px 15px rgb(131, 126, 126);
+}
+
+
+
+
+.shape-2 .icon{
+    font-size: 50px;
+    margin: 20px 20px;
+}
+
+.shape-2 .title{
+    margin-top: 25px;
+    text-decoration: none;
+    color: black;
+    transition: 0.5s ease-in-out;
+    font-size: 20px;
+}
+
+.shape-2 .title:hover{
+    color: rgb(214, 122, 122);
+}
+
+.shape-2-1 .title:hover{
+    color: rgb(214, 122, 122);
+}
+
+.shape-2-2 .title:hover{
+    color: rgb(214, 122, 122);
+}
+
+.shape-2-1{
+    background-image:radial-gradient(#749F82, #CFFF8D);
+    width: 300px;
+    height: 100px;
+    margin: 50px;
+    border-radius: 15px;
+    display: flex;
+   margin-left: -10px;
+   box-shadow: 5px 10px 15px 15px rgb(131, 126, 126);
+
+}
+.shape-2-1 .icon{
+    font-size: 50px;
+    margin: 20px 20px;
+}
+
+.shape-2-1 .title{
+    margin-top: 25px;
+    text-decoration: none;
+    color: black;
+    transition: 0.5s ease-in-out;
+    font-size: 20px;
+}
+
+.shape-2-2{
+    background-image:radial-gradient(#749F82, #CFFF8D);
+    width: 300px;
+    height: 100px;
+    margin: 50px;
+    border-radius: 15px;
+    display: flex;
+   margin-left: 20px;
+   box-shadow: 5px 10px 15px 15px rgb(131, 126, 126);
+
+}
+.shape-2-2 .icon{
+    font-size: 50px;
+    margin: 20px 20px;
+}
+
+.shape-2-2 .title{
+    margin-top: 25px;
+    text-decoration: none;
+    color: black;
+    transition: 0.5s ease-in-out;
+    font-size: 20px;
+}
+
+.shap{
+    margin-top: -300px;
+    margin-left: 200px;
+    margin-right: 180px;
+    justify-content: space-around;
+    display: flex;
+
+}
+
+#about-hospital{
+    width: 100%;
+    height: 100%;
+    margin-top: 50%;
+    position: absolute;
+    background-color: #CFFF8D;
+    display: flex;
+}
+
+#about-hospital img{
+    width: 270px;
+    height: 400px;
+    margin-top: 10%;
+    margin-left: 100px;
+    border-radius: 20px;
+}
+
+#about-hospital .detail{
+    margin-top: 10%;
+    margin-left: 100px;
+}
+
+#about-hospital .detail p{
+    margin-right: 50px;
+    text-align: justify;
+}
+
+#about-doctor{
+    width: 100%;
+    height: 100%;
+    margin-top: 97%;
+    position: absolute;
+    background-color:#749F82;
+    display: flex;
+}
+
+#about-doctor h1{
+   margin: 30%;
+}
+
+#about-doctor .detail #spes{
+  
+    margin-left: 50px;
+}
+
+#about-doctor .detail #spes li{
+  font-size: 20px;
+}
+
+#about-doctor img{
+   margin-left: 145px;
+}
+
+#about-pasien{
+    width: 100%;
+    height: 100%;
+    margin-top: 1850px;
+    position: absolute;
+    background-color: #CFFF8D;
+    display: flex;
+}
+
+#about-pasien img{
+    margin: 100px;
+    width: 600px;
+    height: 420px;
+}
+
+#about-pasien .detail p{
+    margin: 250px 50px;
+}
+
+#about-mental{
+    width: 100%;
+    height: 100%;
+    margin-top: 2400px;
+    background-color: #CFFF8D;
+    display: flex;
+}
+
+#about-mental img{
+    margin: 100px;
+    width: 600px;
+    height: 420px;
+}
+
+#about-mental .detail p{
+    margin: 180px 50px;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pasien.css">
+    <title>Pasien</title>
+</head>
+<body>
+    
+<div class="animation">
+    <ul class="box-area">
+        <li><ion-icon name="planet-sharp"></ion-icon></li>
+        <li><ion-icon name="planet-sharp"></ion-icon></li>
+        <li><ion-icon name="planet-sharp"></ion-icon></li>
+        <li><ion-icon name="planet-sharp"></ion-icon></li>
+        <li><ion-icon name="planet-sharp"></ion-icon></li>
+        <li><ion-icon name="planet-sharp"></ion-icon></li>
+        <li><ion-icon name="planet-sharp"></ion-icon></li>
+        <li><ion-icon name="planet-sharp"></ion-icon></li>
+        <li><ion-icon name="planet-sharp"></ion-icon></li>
+        <li><ion-icon name="planet-sharp"></ion-icon></li>
+    </ul>
+    </div>
+
+    <h1 class="center">Data Pasien <br> Obdam Mental Care Hospital</h1>
+   
+    <form id="input">
+        <input id="inputid" type="text" placeholder="id pasien"/>
+        <button id="submit" type="submit"><ion-icon name="search-outline"></ion-icon></button>
+    </form>
+   
+    
+    <table>
+        <p id="pasien"></p>
+    </table>
+    
+    <p id="detail"></p>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        var data,nomor=0;
+        
+        view()
+
+        var form = document.getElementById('input')
+        form.addEventListener('submit',function(event){
+        event.preventDefault()
+
+        var id = document.getElementById('inputid').value
+        console.log(id)
+        viewreq(id)
+   
+        })
+
+        function view(){
+            let pasien = ' '
+        
+        fetch("http://localhost:5000/getpasien")
+        .then((response)=>response.json())
+        .then((data)=> {
+            console.log(data)
+            pasien+=
+            `<table>
+                <tr>
+                    <th style="padding:10px">Pasien Id</th>
+                    <th style="padding:10px">Nama Pasien</th>
+                    <th style="padding:10px">Kamar</th>
+                    <th style="padding:10px">Dokter Spesialis </th>
+                </tr>
+            </table>`
+            if (data==null){
+               alert("No ID Match");
+            }
+            data.forEach((pas) => {
+                pasien+=
+                `<table>
+                <tr> 
+                            <td style="padding:10px">${pas.pasien_id}</td>
+							<td style="padding:10px">${pas.nama}</td>
+                            <td style="padding:10px">${pas.Room_name}</td>
+                            <td style="padding:10px">${pas.Doctor_name}</td>
+                </tr>
+                `;
+            })
+            const pasiens = document.getElementById("pasien").innerHTML=pasien;
+        })
+     }
+
+
+        function viewreq(id){
+            let pasien = ' '
+        
+        fetch("http://localhost:5000/getpasien/" + id)
+        .then((response)=>response.json())
+        .then((data)=> {
+            console.log(data)
+            if (data==null){
+               alert("No ID Match");
+            }
+            data.forEach((pas) => {
+                pasien+=
+                `
+                            <div class="head-pas">
+                                <h1 class="pas-name">${pas.nama}</h1>
+                                <h1 class="pas-room">${pas.Room_name} : Rooms</h1>
+                            </div>
+                            <h3 class="pas-id">ID Pasien - ${pas.pasien_id}</h3>
+                            <h3 class="pas-age">${pas.detail_age} <br> ${pas.detail_jk} <br> ${pas.detail_stat}</h3>
+                            
+                            <div class="line"></div>
+                            <h3>Tempat, Tanggal Lahir</h3>
+                            <h2 class="pas-ttl">${pas.detail_ttl}</h2> 
+                            <h3>Alamat</h3>
+                            <h2 class="pas-ttl">${pas.detail_address}</h2>
+                            <h3>Deskripsi</h3>
+                            <h2 class="pas-ttl">${pas.detail_desc}</h2>
+                            
+                            <div class="line"></div>
+                            <h3>Obat Pemulihan</h3>
+                            <h2 class="pas-ttl">${pas.Medicine_name}</h2> 
+                            <h3>Aturan Pakai</h3>
+                            <h2 class="pas-ttl">${pas.aturan}</h2>
+                           
+                `;
+            })
+            const pasiens = document.getElementById("pasien").innerHTML=pasien;
+        })
+     }
+    
+     
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Fetch Data by Javascript</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" name="nama" id="nama">
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        const api_url = 
+            "http://localhost:5000/";
+
+        var nama = '';
+        // Defining async function
+        async function getapi(url) {
+            // Storing response
+            const response = await fetch(url+"get");
+            
+            // Storing data in form of JSON
+            var data = await response.json();
+            console.log(data);
+        }
+        // Calling that async function
+        getapi(api_url);
+
+        async function postapi(url) {
+            
+            console.log();
+            $.ajax({
+                url: url+"post",
+                type: "POST",
+                crossDomain: true,
+                data: JSON.stringify(
+                    [{
+                        "nama" : nama,
+                        "harga" : 3000,
+                        "kategori_id" : 1
+                    }]
+                ),
+                dataType: "json",
+                success: function (response) {
+                    var resp = JSON.parse(response)
+                    alert(resp);
+                },
+                error: function (xhr, status) {
+                    alert("error");
+                }
+            });
+        }
+
+        postapi(api_url);
+
+        $("#nama").change(function(){
+            name = $("#nama").val();
+            nama = name;
+        });
+    </script>
+</body>
+</html>
