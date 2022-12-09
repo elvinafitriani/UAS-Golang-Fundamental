@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#mn{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+/* main konten */
+
+.konten{
+    padding: 10px 0;
+    border: 1px solid antiquewhite;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: whitesmoke;
+    width: 32.75%;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+}
+
+.content{
+    margin-top: 10px;
+    height: 150px;
+}
+
+.ket{
+    width: 200px;
+    height: 200px;
+}
+
+.leb{
+    font-weight: bold;
+}
+
+.gambar{
+    width: 400px;
+    height: 300px;
+}
+
+/* header */
+
+header {
+    top: 0;
+    background-color: #1FB4E0;
+    text-align: center;
+    position: sticky;
+    display: flex;
+    padding: 20px 150px;
+    justify-content: space-between;
+
+}
+
+#logo img{
+    width: 75px;
+    height: 25px;
+}
+
+header nav ul{
+    display: flex;
+    align-items: center;
+}
+
+header nav ul li{
+    margin: 0 30px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(to right, rgb(22, 104, 197), rgb(57, 206, 206));
+    height: 110px;
+    text-align: center;
+    z-index: -1;
+}
+
+.icon a {
+    margin: 30px;
+    color: white;
+    font-size: 35px;
+}
+
+.copyright {
+    color: honeydew;
+}
+
+.copyright>a {
+    color: white;
+    text-decoration: none;
+}
