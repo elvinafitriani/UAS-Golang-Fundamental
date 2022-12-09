@@ -1,0 +1,266 @@
+/* ======================================  NAVBAR  ============================================== */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    top:0;
+    width: 100%;
+    position: fixed;
+}
+
+header:hover{
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1), -2px -2px 2px rgba(0, 0, 0, 0.1);
+}
+
+header > .navbar {
+    display:flex;
+    justify-content:space-between;
+    background-color: #054666;
+    padding:11px 0;
+    border-bottom:1px solid rgb(211, 200, 200);
+    margin-right: 0px;
+}
+
+nav>.logo{
+    display:flex;
+    align-items: center;
+}
+
+.logo > img {
+    padding-top: 1%;
+    width:7%;
+    margin-left: 1%;
+}
+
+.logo > span{
+    font-size:40px;
+    color:white;
+    padding-right: 5px;
+}
+
+
+.logo>h3{
+    font-family: 'Source Code Pro', monospace;
+    color:white;
+    font-size: 18px;
+    text-shadow: 3px 4px 4px gray;;
+}
+
+nav>.profil{
+    display:inline-flex;
+    justify-content: flex-end;
+    align-items:center;
+    margin-right: 5px;
+}
+
+.profil > img{
+    width:8%;
+    border-radius: 100%;
+}
+
+.profil > p {
+    color: white;
+    padding-right: 5px;
+}
+
+h3>p{
+    font-family: 'Source Code Pro', monospace;
+    color:white;
+    font-size: 12px;
+    text-shadow: 1px 1px 1px gray;;
+}
+
+
+
+
+
+
+
+
+/* ======================================  MAIN  ============================================== */
+main{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(238, 242, 245);
+}
+
+
+.sidebar {
+    position: fixed;
+    top:80px;
+    left: 0px;
+    width: 18%;
+    height: 100%;
+    background: #042331;
+    transition: all .5s ease;
+  }
+  .sidebar >ul> .profil {
+    display: flex;
+    padding: 40px;
+  }
+
+  .sidebar >ul> .profil >img{
+    padding-right: 5px;
+    width:50px;
+  }
+
+  .sidebar >ul> .profil >p{
+    padding-top: 10px;
+    font-size:larger;
+  }
+
+  .sidebar ul a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 50px;
+    font-size: 20px;
+    color: white;
+    padding-left: 40px;
+    box-sizing: border-box;
+    border-bottom: 1px solid black;
+    border-top: 1px solid rgba(255,255,255,.1);
+    transition: .4s;
+    text-decoration-line: none;
+  }
+  ul li:hover a{
+    padding-left: 50px;
+    line-height: 60px;
+    background-color: white;
+    color: #054666;
+  }
+
+  ul > .aktif> a{
+    padding-left: 50px;
+    line-height: 60px;
+    background-color: white;
+    color: #054666;
+  }
+
+  .sidebar ul a i{
+    margin-right: 16px;
+  }
+  #check{
+    display: none;
+  }
+
+
+
+  /* TABLEEEE */
+
+.container{
+    top:100px;
+    padding-left: 250px;
+} 
+.tabel{
+    max-width:100%;
+    overflow-x: auto;
+    max-height: 55vh;
+    background-color: white;
+}
+
+thead th{
+    top:0;
+    position:sticky;
+    background-color:rgb(7, 7, 116);
+    color:white;
+    height:40px;
+    width:120px;
+}
+
+table{
+    border: 3px;
+    height:20px;
+    border-collapse: collapse;
+    padding:20px 20px;
+}
+
+tr:nth-child(even){
+    background-color: rgb(225, 219, 219);
+}
+
+tr td{
+    padding: 5px 50px;
+}
+
+td a{
+    cursor: pointer;
+}
+
+.container > h1{
+    background-color: rgb(238, 242, 245);
+    padding-bottom: 50px;
+    font-size:40px;
+}
+
+.foto{
+    width:100px;
+    height:100px;
+}
+
+.rekening {
+    height: 100px;
+}
+
+.Dashboard {
+    font-size: 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    padding-left: 260px;
+}
+/* ======================================  RESPONSIVE BREAKPOINT  ============================================== */
+
+/* UKURAN TABLET */
+@media screen and (max-width: 768px){
+    h3>p{
+        font-size: x-small;
+    }
+
+    nav>ul {
+        width:50%;
+    }
+
+    .logo > span{
+        font-size:30px;
+        color:black;
+        padding-right: 5px;
+    }
+    
+    .logo>h3 {
+        font-family: 'Source Code Pro', monospace;
+        font-size:15px;
+    }
+
+       main>img{
+        width: 100%;
+        padding-top: 75px;
+    }
+
+    footer>p{
+        font-size: x-small;
+    }
+}
+
+
+/* UKURAN MOBILE */
+@media screen and (max-width: 576px){
+    h3>p{
+        font-size: xx-small;
+    }
+
+    main>img{
+        width: 100%;
+        padding-top: 80px;
+    }
+
+
+    footer > p{
+        font-size: xx-small;
+    }
+}
