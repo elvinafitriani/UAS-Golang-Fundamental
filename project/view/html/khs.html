@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khs</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    intergrity="sha512-kfkfwYDsLKI1wq6LFn18zNdLGxu9YAA1QvwINKs4PhcE1QSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXge10g"
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+    <header>
+        <div class="right">
+            <img src="../../image/1.png" alt="" class="log">
+            <h1>D-Akademik</h1>
+        </div>
+        <div class="left">
+           <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-circle-user"></i>
+        </div>
+    </header>
+
+    <input type="checkbox" id="check">
+    <label for="check">
+        <i class="fa-solid fa-bars" id="btn"></i>
+        <i class="fa-solid fa-xmark" id="cancel"></i>
+    </label>
+    <nav class="sidebar">
+        <div class="text">
+            <a href="./home.html"><i class="fa-solid fa-house"></i>Home</a>
+        </div>
+        <ul>
+            <li><a href="./jadwal.html" ><i class="fa-solid fa-calendar-days"></i> Jadwal</a></li>
+            <li><a href="./dosen.html" ><i class="fa-sharp fa-solid fa-person-chalkboard"></i>Dosen</a></li>
+            <li><a href="./matkul.html" ><i class="fa-solid fa-book"></i>Matkul</a></li>   
+            <li><a href="./khs.html" ><i class="fa-solid fa-star"></i>Khs</a></li>
+            <li><a href="./mahasiswa.html" ><i class="fa-sharp fa-solid fa-user-group"></i>Mahasiswa</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <div class="judul">
+        <h1>Kartu Hasil Studi</h1>
+        </div>
+        <table >
+            <thead>
+                <tr>
+                    <th>Nim</th>
+                    <th>Nama</th>
+                    <th>Matkul</th>
+                    <th>Semester</th>
+                    <th>Kurikulum</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody class="isi">
+
+            </tbody>
+        </table>
+
+        <ul class="option">
+            <li><a href="#" class="tbl">Tambah</a></li>
+            <li><a href="#" class="tbl">Update</a></li>
+            <li><a href="#" class="tbl">Hapus</a></li>
+        </ul>
+
+    </section>
+
+    <footer>
+        <div class="copy">
+            <a href="">&copy Copyright 2022 by AS</a>
+        </div>
+    </footer>
+
+    <script src="../js/khs.js"></script>
+</body>
+</html>

@@ -1,0 +1,323 @@
+*{
+    margin :0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    background:#eee3cb;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    border: 3px solid #dac599;
+    background: rgb(255, 253, 253);
+}
+
+.right {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.log {
+    width: 80px;
+    height: 70px;
+}
+
+h1 {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: #af8987;
+}
+
+.left {
+    width: 25%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.left i{
+    width: 50px;
+    font-size: 30px;
+}
+
+#check{
+    display: none;
+    padding-top: 50px;
+}
+
+label #btn, label #cancel{
+    position: absolute;
+    cursor: pointer;
+    background: #F1D3B3;
+    border-radius: 3px;
+}
+
+label #btn{
+    left: 70px;
+    top: 80px;
+    position: fixed;
+    font-size: 35px;
+    color:white;
+    padding: 6px 12px;
+    transition: all .5s;
+}
+
+label #cancel{
+    z-index: 1111;
+    left: -195px;
+    top: 85px;
+    position: fixed;
+    font-size: 30px;
+    color: white;
+    padding: 4px 9px;
+    transition: all .5s ease;
+}
+
+#check:checked ~ .sidebar{
+    left: 0;
+}
+
+#check:checked ~ label #btn{
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#check:checked ~ label #cancel{
+    left: 195px;
+}
+
+.sidebar{
+    position:fixed;
+    width: 250px;
+    height: 100%;
+    left: -250px;
+    top: 75px;
+    letter-spacing: 1px;
+    transition: all .5s ease;
+}
+
+.text {
+    font-size: 25px;
+    width: 250px;
+    font-weight: 600;
+    line-height: 60px;
+    text-align: center;
+    background:#E3CAA5;
+    margin-right: 20px;
+}
+
+.text a{
+    text-decoration: none;
+    color: white;
+    margin-right: 40px;
+}
+
+.text a i{
+    margin-right: 16px;
+}
+
+
+nav ul{
+    background:#9e7b6f;
+    height: 100%;
+    width: 100%;
+    list-style: none;
+}
+
+nav ul li{
+    line-height: 60px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+
+}
+
+nav ul li a{
+    position: relative;
+    color: rgb(226, 226, 226);
+    text-decoration: none;
+    font-size: 18px;
+    padding-left: 40px;
+    font-weight: 500;
+    display: block;
+    width: 100%;
+    border-left: 3px solid transparent;
+}
+
+nav ul li a:hover{
+    color: black;
+    background:#D7C0AE;
+    border-left-color:rgb(163, 199, 199);
+}
+
+ul li:hover a{
+    padding-left: 50px;
+}
+
+.sidebar ul a i{
+    margin-right: 16px;
+}
+
+section{
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    transition: all .5s;
+    overflow: auto;
+}
+
+section .gbr{
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 200px;
+}
+
+
+.quotes{
+    margin-top: 30px;
+    text-align: center;
+    color: #523937;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#check:checked ~ section{
+    margin-left: 250px;
+}
+
+.judul > h1{
+    text-align: center;
+    line-height: 30px;
+    padding-top: 120px;
+    text-transform: uppercase;
+}
+
+table{
+    border-collapse: collapse;
+    position: relative;
+    margin: auto;
+    margin-top: 50px;
+}
+
+table th,
+table td{
+    padding: 7px 17px;
+    text-align: center;
+}
+
+table thead th{
+    background-color:#d4be9a;
+    color: #000;
+    text-transform: uppercase;
+}
+
+table tbody td{
+    color:#353535;
+}
+
+table tbody tr:nth-child(odd) td{
+    background-color: #F4F9F4;
+}
+
+table tbody tr:nth-child(even) td{
+    background-color: #dbd4bc;
+}
+
+table tbody tr:hover td{
+    background-color: #c7c3b7;
+    transition: all .2s;
+    color: #000;
+}
+
+table tbody td a{
+    color: #000;
+}
+
+section li{
+    margin-right: 30px;
+    list-style: none;
+    text-align: right;
+}
+
+.gg  {
+    width: 120px;
+    height: 100px;
+    display: block;
+    margin: auto;
+}
+
+.option {
+    display: flex;
+    justify-content:center;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 30px;
+}
+
+.option ul {
+    display: flex;
+    gap: 10px;
+}
+
+section ul li {
+    list-style: none;
+}
+
+section ul li a {
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    font-size: 100%;
+    text-decoration: none;
+}
+
+section ul a:hover {
+    text-decoration: underline;
+}
+
+section ul li a.tbl {
+    background-color:rgb(224, 216, 175) ;
+    border-radius: 15px;
+    margin-bottom: 100px;
+    padding: 10px 20px 10px 20px;
+    color: black;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+section ul li a.tbl:hover {
+    background: #dbd4bc;
+    text-decoration: none;
+}
+
+footer {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    padding-bottom: 0;
+    justify-content: center;
+    flex-direction: column;
+ }
+
+ .copy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(204, 152, 160);
+    width: 100%;
+    height: 30px;
+    font-size: 12px;
+
+ }
+ 
+ .copy a {
+    color: #fff;
+    text-decoration: none;
+
+ }
